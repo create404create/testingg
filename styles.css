@@ -1,0 +1,601 @@
+/* ==================== BASE STYLES ==================== */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --success-color: #4cc9f0;
+    --danger-color: #f72585;
+    --warning-color: #f8961e;
+    --info-color: #7209b7;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    --gradient-success: linear-gradient(135deg, #4cc9f0 0%, #4895ef 100%);
+    --gradient-danger: linear-gradient(135deg, #f72585 0%, #b5179e 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==================== CARD STYLES ==================== */
+.card {
+    border-radius: 15px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: var(--gradient-primary);
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+}
+
+.card-header h4, .card-header h5 {
+    margin: 0;
+    color: white;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* ==================== UPLOAD SECTION ==================== */
+.upload-section {
+    background-color: var(--light-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.border-dashed {
+    border: 3px dashed var(--primary-color);
+    border-radius: 12px;
+}
+
+.upload-area {
+    cursor: pointer;
+    padding: 50px 20px;
+    transition: all 0.3s;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.upload-area:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+}
+
+.upload-area.drag-over {
+    background-color: rgba(67, 97, 238, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.upload-area i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #3a56d4 0%, #2e0b8a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+.btn-success {
+    background: var(--gradient-success);
+    border: none;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #44b5db 0%, #3d84d9 100%);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: var(--gradient-danger);
+    border: none;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ==================== PROGRESS BAR ==================== */
+.progress {
+    border-radius: 10px;
+    background-color: #e9ecef;
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: var(--gradient-primary);
+    transition: width 0.6s ease;
+}
+
+.progress-bar-striped {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 1rem 1rem;
+}
+
+.progress-bar-animated {
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+    0% { background-position: 1rem 0; }
+    100% { background-position: 0 0; }
+}
+
+/* ==================== BADGES ==================== */
+.badge {
+    padding: 0.35em 0.65em;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 20px;
+    margin: 2px;
+}
+
+.badge-primary {
+    background: var(--gradient-primary);
+}
+
+.badge-success {
+    background: var(--gradient-success);
+}
+
+.badge-danger {
+    background: var(--gradient-danger);
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, #f8961e 0%, #f3722c 100%);
+    color: white;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #7209b7 0%, #560bad 100%);
+    color: white;
+}
+
+.state-badge {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    margin: 3px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ==================== TABLES ==================== */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    background: var(--gradient-primary);
+    color: white;
+    z-index: 10;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-color: #e9ecef;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+}
+
+/* ==================== CUSTOM SCROLLBAR ==================== */
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* ==================== STATE CARDS ==================== */
+.state-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    overflow: hidden;
+}
+
+.state-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.state-card .card-body {
+    padding: 0.75rem 1rem;
+}
+
+.state-card .progress {
+    height: 20px;
+    margin: 0;
+}
+
+/* ==================== ALERTS ==================== */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 1.25rem;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    color: #006064;
+    border-left: 4px solid #00bcd4;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #1b5e20;
+    border-left: 4px solid #4caf50;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    color: #e65100;
+    border-left: 4px solid #ff9800;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+    color: #880e4f;
+    border-left: 4px solid #e91e63;
+}
+
+/* ==================== BACKEND NOTIFICATION ==================== */
+.backend-notification {
+    position: fixed !important;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+    animation: slideInRight 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ==================== FORM CONTROLS ==================== */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.input-group-text {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px 0 0 8px;
+}
+
+/* ==================== ADMIN PANEL SPECIFIC ==================== */
+.stat-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: white;
+    text-align: center;
+    transition: all 0.3s;
+    border: none;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h6 {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.file-item {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: white;
+    transition: all 0.3s;
+}
+
+.file-item:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.processing {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .upload-area {
+        padding: 30px 15px;
+    }
+    
+    .upload-area i {
+        font-size: 3rem;
+    }
+    
+    .btn-lg {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .table-responsive {
+        max-height: 300px;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+        min-height: 100px;
+    }
+    
+    .stat-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .backend-notification {
+        min-width: 250px;
+        max-width: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    
+    .col-md-3, .col-md-6, .col-md-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .state-card .row > div {
+        margin-bottom: 0.5rem;
+    }
+    
+    .state-card .text-end {
+        text-align: left !important;
+    }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.shadow-lg {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-end {
+    text-align: right;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+/* ==================== LOADING SPINNER ==================== */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.25em;
+}
+
+.spinner-border.text-primary {
+    border-color: var(--primary-color) transparent var(--primary-color) transparent;
+}
+
+/* ==================== FOOTER ==================== */
+.card-footer {
+    background-color: rgba(248, 249, 250, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .btn, .upload-area, .card-footer, .backend-notification {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+}
